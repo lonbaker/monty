@@ -1,1 +1,4 @@
 *.swp
+.yardoc
+coverage
+doc
