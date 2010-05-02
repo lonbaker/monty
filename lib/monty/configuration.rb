@@ -25,5 +25,5 @@ module Monty
     end
 
     self.reset
-  end
-end
+  end # Configuration
+end # Monty

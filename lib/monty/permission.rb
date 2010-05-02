@@ -20,5 +20,5 @@ module Monty
       @controllers << controller
       controller
     end
-  end
-end
+  end # Permission
+end # Monty

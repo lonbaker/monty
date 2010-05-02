@@ -43,5 +43,5 @@ module Monty
       Monty::Configuration.permissions << permission
       permission
     end
-  end
-end
+  end # Access
+end # Monty

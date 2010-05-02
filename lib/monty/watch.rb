@@ -32,5 +32,5 @@ module Monty
       regex_string = session[:access_rights] || '/^$/'
       Regexp.new(regex_string)
     end
-  end
-end
+  end # Watch
+end # Monty

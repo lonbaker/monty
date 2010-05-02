@@ -32,5 +32,5 @@ module Monty
       @inclusions = methods.collect{|m| m.to_s}
       @regex_pattern = "\/#{@name}\/(#{@inclusions.join('|')})"
     end
-  end
-end
+  end # Controller
+end # Monty
