@@ -22,7 +22,6 @@ module Monty
     def except(*methods)
       return if methods.empty?
       @exceptions = methods.collect{|m| m.to_s}
-      # \/my_controller\/(?!(show|update)).*
       @regex_pattern = "\/#{@name}\/(?!(#{@exceptions.join('|')})).*"
     end
 
