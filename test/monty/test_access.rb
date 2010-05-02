@@ -10,6 +10,10 @@ class TestMontyAccess < Test::Unit::TestCase
     @model = TestModel.new
   end
 
+  def teardown
+    Monty::Configuration.reset
+  end
+
   def test_model_responds_to_permission
     assert_respond_to @model, :permission
   end
@@ -23,5 +27,6 @@ class TestMontyAccess < Test::Unit::TestCase
     assert_equal 'my_controller', controller.name
     assert_equal "\/my_controller\/.*", controller.regex_pattern
   end
+
 end
 

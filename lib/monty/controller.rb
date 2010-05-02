@@ -16,12 +16,14 @@ module Monty
 
     # @param [String,Symbol] name controller reference. 
     def except(*methods)
+      return if methods.empty?
       @exceptions = methods
       # \/my_controller\/(?!(show|update)).*
       @regex_pattern = "\/#{@name}\/(?!(#{@exceptions.join('|')})).*"
     end
 
     def only(*methods)
+      return if methods.empty?
       @inclusions = methods
       @regex_pattern = "\/#{@name}\/(#{@inclusions.join('|')})"
     end

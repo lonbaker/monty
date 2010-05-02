@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf8" />
+<title>Module: Monty::Configuration</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo; 
+    <span class='title'><a href="../Monty.html" title="Monty (module)">Monty</a></span>
+     &raquo; 
+    <span class="title">Configuration</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Monty::Configuration 
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/monty/configuration.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  <h2>Class Attribute Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#access_denied_path-class_method" title="access_denied_path (class method)">+ (Object) <strong>access_denied_path</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Path to redirect to if access is denied.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#permissions-class_method" title="permissions (class method)">+ (Object) <strong>permissions</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Array of permission objects that defines the access to the application.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#protected_access-class_method" title="protected_access (class method)">+ (Object) <strong>protected_access</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Array of paths that are restricted to an authenticated user.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#public_access-class_method" title="public_access (class method)">+ (Object) <strong>public_access</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Array of paths that are publicly accessible.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+  
+    <h2>Class Method Summary</h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reset-class_method" title="reset (class method)">+ (Object) <strong>reset</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="class_attr_details" class="attr_details">
+    <h2>Class Attribute Details</h2>
+    
+      
+      <span id="access_denied_path=-class_method"></span>
+      <span id="access_denied_path-class_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="access_denied_path-class_method">
+  
+    + (<tt>Object</tt>) <strong>access_denied_path</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Path to redirect to if access is denied. Default: &#8217;/&#8217;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/monty/configuration.rb', line 8</span>
+
+<span class='def def kw'>def</span> <span class='access_denied_path identifier id'>access_denied_path</span>
+  <span class='@access_denied_path ivar id'>@access_denied_path</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="permissions=-class_method"></span>
+      <span id="permissions-class_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="permissions-class_method">
+  
+    + (<tt>Object</tt>) <strong>permissions</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Array of permission objects that defines the access to the application.
+Default []
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/monty/configuration.rb', line 17</span>
+
+<span class='def def kw'>def</span> <span class='permissions identifier id'>permissions</span>
+  <span class='@permissions ivar id'>@permissions</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="protected_access=-class_method"></span>
+      <span id="protected_access-class_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="protected_access-class_method">
+  
+    + (<tt>Object</tt>) <strong>protected_access</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Array of paths that are restricted to an authenticated user. Default []
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/monty/configuration.rb', line 14</span>
+
+<span class='def def kw'>def</span> <span class='protected_access identifier id'>protected_access</span>
+  <span class='@protected_access ivar id'>@protected_access</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="public_access=-class_method"></span>
+      <span id="public_access-class_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="public_access-class_method">
+  
+    + (<tt>Object</tt>) <strong>public_access</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Array of paths that are publicly accessible. Default [&#8217;/&#8217;]
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/monty/configuration.rb', line 11</span>
+
+<span class='def def kw'>def</span> <span class='public_access identifier id'>public_access</span>
+  <span class='@public_access ivar id'>@public_access</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="reset-class_method">
+  
+    + (<tt>Object</tt>) <strong>reset</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/monty/configuration.rb', line 19</span>
+
+<span class='def def kw'>def</span> <span class='reset identifier id'>reset</span>
+  <span class='@access_denied_path ivar id'>@access_denied_path</span> <span class='assign token'>=</span> <span class='string val'>'/'</span>
+  <span class='@public_access ivar id'>@public_access</span>      <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='string val'>'/'</span><span class='rbrack token'>]</span>
+  <span class='@protected_access ivar id'>@protected_access</span>   <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+  <span class='@permissions ivar id'>@permissions</span>        <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun May  2 10:18:28 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.4 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>
