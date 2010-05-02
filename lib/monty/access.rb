@@ -35,7 +35,11 @@ module Monty
     # @yield [Monty::Permission.new(name)] new permission object
     def permission(name, &block)
       permission =  Monty::Permission.new(name)   
-      permission.instance_eval(&block)
+      if block_given?
+        permission.instance_eval(&block) 
+      else
+        permission.controller(permission.name)
+      end
       Monty::Configuration.permissions << permission
       permission
     end
