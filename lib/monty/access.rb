@@ -9,6 +9,12 @@ module Monty
     #       controller :site
     #     end
     #
+    #     # Can use multiple controller statements
+    #     permission :public_pages do
+    #       controller :site
+    #       controller :posts
+    #     end
+    #
     #     # Only methods show, edit and update on the users controller will 
     #     # be open to users who have this permission.
     #     permission :my_account_pages do
