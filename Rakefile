@@ -1,12 +1,14 @@
 require 'rubygems'
 require 'rake'
 
+require 'lib/monty.rb'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "monty"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.version = Monty.version
+    gem.summary = %Q{Rack based authorization system}
+    gem.description = %Q{Rack based authoriztion system.}
     gem.email = "andy@stonean.com"
     gem.homepage = "http://github.com/stonean/monty"
     gem.authors = ["stonean"]
