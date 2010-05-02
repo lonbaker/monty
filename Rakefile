@@ -42,6 +42,7 @@ begin
     test.libs << 'test'
     test.pattern = 'test/**/test_*.rb'
     test.verbose = true
+    test.rcov_opts = IO.readlines("test/rcov.opts").map {|l| l.chomp.split " "}.flatten
   end
 rescue LoadError
   task :rcov do

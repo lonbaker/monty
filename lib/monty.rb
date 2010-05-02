@@ -1,4 +1,5 @@
 # encoding: utf-8
+
 $:.unshift(File.dirname(__FILE__))
 
 module Monty
@@ -7,4 +8,8 @@ module Monty
   end
 end
 
+require 'monty/configuration'
 require 'monty/watch'
+require 'monty/controller'
+require 'monty/permission'
+require 'monty/access'
