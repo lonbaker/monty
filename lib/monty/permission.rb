@@ -14,11 +14,17 @@ module Monty
     end
 
     # @param [String,Symbol] name controller reference. 
+    # @return new controller 
     def controller(name, &block)
       controller =  Monty::Controller.new(name)
       controller.instance_eval(&block) if block_given?
       @controllers << controller
       controller
+    end
+
+    # @return String representing all controllers defining this permission
+    def regex_pattern
+      controllers.collect{|c| "(#{c.regex_pattern})"}.join("|")
     end
   end # Permission
 end # Monty

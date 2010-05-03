@@ -43,5 +43,30 @@ module Monty
       Monty::Configuration.permissions << permission
       permission
     end
+
+    # Define which permissions are accessible to everyone
+    #   public_access :site, :user_registration
+    #
+    # @param *[String,Symbol] permissions that are accessible to everyone
+    def public_access(*permissions)
+      Monty::Configuration.public_access = regexes(permissions)
+    end
+
+    # Define which permissions are accessible to everyone
+    #   protected_access :my_account, :site_administration
+    #
+    # @param *[String,Symbol] permissions that are accessbile to authenticated users
+    def protected_access(*permissions)
+      Monty::Configuration.protected_access = regexes(permissions)
+    end
+
+    private
+
+    def regexes(permissions)
+      permissions.collect!{|p| p.to_s}
+      perms = Monty::Configuration.permissions.select{|p| permissions.include?(p.name)}
+      perms.collect{|p| p.regex_pattern}.join("|")
+    end
+
   end # Access
 end # Monty
