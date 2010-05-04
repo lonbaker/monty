@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["stonean"]
-  s.date = %q{2010-05-02}
+  s.date = %q{2010-05-03}
   s.description = %q{Rack based authoriztion system.}
   s.email = %q{andy@stonean.com}
   s.extra_rdoc_files = [
@@ -21,34 +21,13 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.md",
      "Rakefile",
-     "doc/Monty.html",
-     "doc/Monty/Access.html",
-     "doc/Monty/AccessConfiguration.html",
-     "doc/Monty/Configuration.html",
-     "doc/Monty/Controller.html",
-     "doc/Monty/Options.html",
-     "doc/Monty/Permission.html",
-     "doc/Monty/Watch.html",
-     "doc/_index.html",
-     "doc/class_list.html",
-     "doc/css/common.css",
-     "doc/css/full_list.css",
-     "doc/css/style.css",
-     "doc/file.monty.html",
-     "doc/file_list.html",
-     "doc/frames.html",
-     "doc/index.html",
-     "doc/js/app.js",
-     "doc/js/full_list.js",
-     "doc/js/jquery.js",
-     "doc/method_list.html",
-     "doc/top-level-namespace.html",
      "lib/monty.rb",
      "lib/monty/access.rb",
      "lib/monty/configuration.rb",
      "lib/monty/controller.rb",
      "lib/monty/permission.rb",
      "lib/monty/watch.rb",
+     "monty.gemspec",
      "test/helper.rb",
      "test/monty/test_access.rb",
      "test/monty/test_configuration.rb",
@@ -61,7 +40,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/stonean/monty}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{Rack based authorization system}
   s.test_files = [
     "test/helper.rb",

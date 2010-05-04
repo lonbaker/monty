@@ -7,12 +7,12 @@ class TestMonty < Test::Unit::TestCase
   end
 
   def test_it_works
-    get '/',{}, {'rack.session' => {:access_rights => '\/'}}
+    get '/', {}, {}
     assert last_response.ok?
   end
 
   def test_it_redirects
-    get '/posts',{}
+    get '/posts', {}, {'rack.session' => {:access_rights => "/blog/.*"}}
     assert last_response.redirect?
   end
 

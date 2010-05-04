@@ -53,7 +53,7 @@ module Monty
     #
     # @param *[String,Symbol] permissions that are accessible to everyone
     def public_access(*permissions)
-      Monty::Configuration.public_access = regexes(permissions) + "|\/" 
+      Monty::Configuration.public_access = regexes(permissions)
     end
 
     # Define which permissions are accessible to everyone
@@ -64,6 +64,10 @@ module Monty
       Monty::Configuration.protected_access = regexes(permissions)
     end
 
+
+    def configure
+      # Empty method used to load the class
+    end
     private
 
     def regexes(permissions)

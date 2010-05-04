@@ -15,22 +15,36 @@ module Monty
 
     # Authorize request. Redirect if access is denied.
     def _call(env)
-      status, headers, body = @app.call(env)
 
-      if allowed_paths(env).match(env['PATH_INFO'])
-        [status, headers, body]
-      else
-        [302, {'Location' => Monty::Configuration.access_denied_path}, []]
+      unless allowed?(env) 
+        return [302, redirect_headers, []]
       end
+
+      @app.call(env)
     end
 
     private
 
+    def allowed?(env)
+      path = env['PATH_INFO']
+
+      return true if path == '/'
+
+      access_rights(env).match(path) 
+    end
+
     # @return [Regexp] created from value of rack.session[:access_rights]
-    def allowed_paths(env)
+    def access_rights(env)
+      ::Authorization.configure if Object.const_defined?('Authorization')
+      
       session = env['rack.session'] || {}
-      regex_string = session[:access_rights] || '/^$/'
+      regex_string = session[:access_rights] || Monty::Configuration.public_access
+
       Regexp.new(regex_string)
+    end
+
+    def redirect_headers
+      {'Location' => Monty::Configuration.access_denied_path, 'Content-Type' => 'text/html'}
     end
   end # Watch
 end # Monty

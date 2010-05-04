@@ -13,7 +13,8 @@ class Test::Unit::TestCase
 end
 
 def mock_framework
-  mock 'framework', 
-        :call => [200, {'Content-Type' => 'text/plain'}, 'OK'] 
+  framework = mock 'framework'
+  framework.stubs :call => [200, {'Content-Type' => 'text/plain'}, 'OK'] 
+  framework 
 end
 
