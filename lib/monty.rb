@@ -6,6 +6,10 @@ module Monty
   def self.version
     '0.1.0'
   end
+
+  def self.authenticated_access
+    Monty::Configuration.public_access + "|" + Monty::Configuration.protected_access
+  end
 end
 
 require 'monty/configuration'
