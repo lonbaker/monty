@@ -18,10 +18,14 @@ module Monty
 
       # Set defaults.
       def reset
-        @access_denied_path = '/'
-        @public_access      = "\/"
-        @protected_access   = "/^$/"
+        @access_denied_path = "/"
+        @public_access      = "/"
+        @protected_access   = ""
         @permissions        = []
+      end
+
+      def has_permission?(permission)
+        permissions.any?{|p| permission.name == p.name}
       end
     end
 
