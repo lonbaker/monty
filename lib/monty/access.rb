@@ -40,7 +40,11 @@ module Monty
       else
         permission.controller(permission.name)
       end
-      Monty::Configuration.permissions << permission
+
+      unless Monty::Configuration.has_permission?(permission)
+        Monty::Configuration.permissions << permission 
+      end
+
       permission
     end
 
@@ -49,7 +53,7 @@ module Monty
     #
     # @param *[String,Symbol] permissions that are accessible to everyone
     def public_access(*permissions)
-      Monty::Configuration.public_access = regexes(permissions)
+      Monty::Configuration.public_access = regexes(permissions) + "|\/" 
     end
 
     # Define which permissions are accessible to everyone
