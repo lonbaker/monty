@@ -65,9 +65,11 @@ module Monty
     end
 
 
+    # Method called by Monty::Watch to trigger parsing of class methods
     def configure
-      # Empty method used to load the class
+      true
     end
+
     private
 
     def regexes(permissions)
