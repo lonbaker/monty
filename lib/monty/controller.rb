@@ -15,14 +15,14 @@ module Monty
     # @param [String,Symbol] name controller reference. 
     def initialize(name)
       @name = name.to_s
-      @regex_pattern = "\/#{@name}\/.*"
+      @regex_pattern = "\/#{@name}(\/.*)?"
     end
 
     # @param *[String,Symbol] only methods restricted on the controller
     def except(*methods)
       return if methods.empty?
       @exceptions = methods.collect{|m| m.to_s}
-      @regex_pattern = "\/#{@name}\/(?!(#{@exceptions.join('|')})).*"
+      @regex_pattern = "\/#{@name}(\/(?!(#{@exceptions.join('|')})).*)?"
     end
 
     # @param *[String,Symbol] only methods allowed on the controller

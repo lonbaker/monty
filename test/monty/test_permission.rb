@@ -31,14 +31,14 @@ class TestMontyPermission < Test::Unit::TestCase
   def test_regex_pattern
     @permission.controller(:users)
 
-    assert_equal @permission.regex_pattern, "(\/users\/.*)"
+    assert_equal @permission.regex_pattern, "(\/users(\/.*)?)"
   end
 
   def test_regex_pattern_with_multiple_controllers
     @permission.controller(:users)
     @permission.controller(:posts)
 
-    assert_equal @permission.regex_pattern, "(\/users\/.*)|(\/posts\/.*)"
+    assert_equal @permission.regex_pattern, "(\/users(\/.*)?)|(\/posts(\/.*)?)"
   end
 end
 

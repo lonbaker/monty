@@ -18,7 +18,7 @@ class TestMontyAccess < Test::Unit::TestCase
 
     controller = perm.controllers.first
     assert_equal 'my_controller', controller.name
-    assert_equal "\/my_controller\/.*", controller.regex_pattern
+    assert_equal "\/my_controller(\/.*)?", controller.regex_pattern
   end
 
   def test_permission_without_block
@@ -26,14 +26,14 @@ class TestMontyAccess < Test::Unit::TestCase
 
     controller = perm.controllers.first
     assert_equal 'users', controller.name
-    assert_equal "\/users\/.*", controller.regex_pattern
+    assert_equal "\/users(\/.*)?", controller.regex_pattern
   end
 
   def test_public_access
     permission(:site)
     public_access :site
 
-    assert_equal Monty::Configuration.public_access, "(\/site\/.*)"
+    assert_equal Monty::Configuration.public_access, "(\/site(\/.*)?)"
   end
 
   def test_public_access_with_multiple_permissions
@@ -43,14 +43,14 @@ class TestMontyAccess < Test::Unit::TestCase
     public_access :site, :registration, :view_posts
 
     assert_equal Monty::Configuration.public_access, 
-      "(\/site\/.*)|(\/registration\/.*)|(\/view_posts\/.*)"
+      "(\/site(\/.*)?)|(\/registration(\/.*)?)|(\/view_posts(\/.*)?)"
   end
 
   def test_protected_access
     permission(:my_account)
     protected_access :my_account
 
-    assert_equal Monty::Configuration.protected_access, "(\/my_account\/.*)"
+    assert_equal Monty::Configuration.protected_access, "(\/my_account(\/.*)?)"
   end
 
   def test_protected_access_with_multiple_permissions
@@ -59,7 +59,7 @@ class TestMontyAccess < Test::Unit::TestCase
     protected_access :my_account, :edit_posts
 
     assert_equal Monty::Configuration.protected_access, 
-      "(\/my_account\/.*)|(\/edit_posts\/.*)"
+      "(\/my_account(\/.*)?)|(\/edit_posts(\/.*)?)"
   end
 
 
