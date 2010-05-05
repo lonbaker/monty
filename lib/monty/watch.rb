@@ -25,6 +25,7 @@ module Monty
 
     private
 
+    # @return [True,False] created from value of rack.session[:access_rights]
     def allowed?(env)
       path = env['PATH_INFO']
 
@@ -35,7 +36,10 @@ module Monty
 
     # @return [Regexp] created from value of rack.session[:access_rights]
     def access_rights(env)
-      ::Authorization.configure if Object.const_defined?('Authorization')
+      begin
+        ::Authorization.configure 
+      rescue NameError
+      end
       
       session = env['rack.session'] || {}
       regex_string = session[:access_rights] || Monty::Configuration.public_access
