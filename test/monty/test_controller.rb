@@ -13,12 +13,12 @@ class TestMontyController < Test::Unit::TestCase
 
   def test_except_sets_correct_regex_pattern
     @controller.except(:destroy)
-    assert_equal @controller.regex_pattern, "\/users(\/(?!(destroy)).*)?"
+    assert_equal @controller.regex_pattern, "\/users(?!\/(destroy))(\/.*)?"
   end
 
   def test_except_with_multiple_params_sets_correct_regex_pattern
     @controller.except(:index, :destroy)
-    assert_equal @controller.regex_pattern, "\/users(\/(?!(index|destroy)).*)?"
+    assert_equal @controller.regex_pattern, "\/users(?!\/(index|destroy))(\/.*)?"
   end
 
   def test_except_with_no_params_preserves_regex_pattern

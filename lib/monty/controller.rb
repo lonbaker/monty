@@ -22,7 +22,7 @@ module Monty
     def except(*methods)
       return if methods.empty?
       @exceptions = methods.collect{|m| m.to_s}
-      @regex_pattern = "\/#{@name}(\/(?!(#{@exceptions.join('|')})).*)?"
+      @regex_pattern = "\/#{@name}(?!\/(#{@exceptions.join('|')}))(\/.*)?"
     end
 
     # @param *[String,Symbol] only methods allowed on the controller
