@@ -43,8 +43,8 @@ module Monty
       
       session = env['rack.session'] || {}
       regex_string = session[:access_rights] || Monty::Configuration.public_access
-
-      Regexp.new(regex_string)
+      
+      Regexp.new(/\A#{regex_string}\z/)
     end
 
     def redirect_headers
