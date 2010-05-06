@@ -4,8 +4,8 @@ More to come, but here's the gist for rails 2.3.5:
 
 In your environment.rb add:
 
-  require 'monty'
-  config.middleware.insert_after ActionController::ParamsParser, Monty::Watch
+    require 'monty'
+    config.middleware.insert_after ActionController::ParamsParser, Monty::Watch
 
 There may be other positions in the middleware stack that will work, I've tested this one.
 
@@ -13,44 +13,44 @@ Then you'll need to define your access rules.  Create a file called authorizatio
 
 Here's an example:
 
-  class Authorization
-    extend Monty::Access
+    class Authorization
+      extend Monty::Access
   
-    # This is creates the following regex matching: \/posts(\/.*)?
-    # Allows: /posts, /posts/, /posts/<any method>
-    permission 'posts'
+      # This is creates the following regex matching: \/posts(\/.*)?
+      # Allows: /posts, /posts/, /posts/<any method>
+      permission 'posts'
 
-    # This is creates the following regex matching: \/posts(?!\/(destroy))(\/.*)?
-    # Not allowed: /posts/destroy
-    # Allows: /posts, /posts/, /posts/<any method but destroy>
-    permission 'posts' do
-      controller 'posts' do
-        except 'destroy'
+      # This is creates the following regex matching: \/posts(?!\/(destroy))(\/.*)?
+      # Not allowed: /posts/destroy
+      # Allows: /posts, /posts/, /posts/<any method but destroy>
+      permission 'posts' do
+        controller 'posts' do
+          except 'destroy'
+        end
       end
-    end
 
-    # This is creates the following regex matching: \/posts\/(show|edit|update)
-    # Not allowed: /posts/destroy
-    # Allows: /posts, /posts/, /posts/<any method but destroy>
-    permission 'posts' do
-      controller 'posts' do
-        only 'show', 'edit', 'update'
+      # This is creates the following regex matching: \/posts\/(show|edit|update)
+      # Not allowed: /posts/destroy
+      # Allows: /posts, /posts/, /posts/<any method but destroy>
+      permission 'posts' do
+        controller 'posts' do
+          only 'show', 'edit', 'update'
+        end
       end
-    end
-  
-    # Permissions can have more than one controller
-    permission 'public' do
-      controller 'posts'
-      controller 'welcome'
-      controller 'feeds'
-    end
+    
+      # Permissions can have more than one controller
+      permission 'public' do
+        controller 'posts'
+        controller 'welcome'
+        controller 'feeds'
+      end
 
-    # To make one of the above permissions public
-    public_access 'public'
+      # To make one of the above permissions public
+      public_access 'public'
 
-    # To make one of the above permissions protected
-    protected_access 'public'
-  end
+      # To make one of the above permissions protected
+      protected_access 'public'
+    end
 
 
 Monty only has the concept of public and protected right now.  After you have authenticated your user, you'll need to have some code in your controller that looks like:
