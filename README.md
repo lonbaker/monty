@@ -1,4 +1,7 @@
 = monty
+Rack based authorization system.
+
+[Yard docs](http://yardoc.org/docs/stonean-monty)
 
 More to come, but here's the gist for rails 2.3.5:
 
@@ -30,8 +33,7 @@ Here's an example:
       end
 
       # This is creates the following regex matching: \/posts\/(show|edit|update)
-      # Not allowed: /posts/destroy
-      # Allows: /posts, /posts/, /posts/<any method but destroy>
+      # Only allows: /posts/show, /posts/edit and /posts/update
       permission 'posts' do
         controller 'posts' do
           only 'show', 'edit', 'update'
