@@ -19,7 +19,7 @@ module Monty
       # Set defaults.
       def reset
         @access_denied_path = "/"
-        @public_access      = "/"
+        @public_access      = ""
         @protected_access   = ""
         @permissions        = []
       end
