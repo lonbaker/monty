@@ -19,11 +19,11 @@ Here's an example:
     class Authorization
       extend Monty::Access
   
-      # This is creates the following regex matching: \/posts(\/.*)?
+      # This creates the following regex matching: \/posts(\/.*)?
       # Allows: /posts, /posts/, /posts/<any method>
       permission 'posts'
 
-      # This is creates the following regex matching: \/posts(?!\/(destroy))(\/.*)?
+      # This creates the following regex matching: \/posts(?!\/(destroy))(\/.*)?
       # Not allowed: /posts/destroy
       # Allows: /posts, /posts/, /posts/<any method but destroy>
       permission 'posts' do
@@ -32,7 +32,7 @@ Here's an example:
         end
       end
 
-      # This is creates the following regex matching: \/posts\/(show|edit|update)
+      # This creates the following regex matching: \/posts\/(show|edit|update)
       # Only allows: /posts/show, /posts/edit and /posts/update
       permission 'posts' do
         controller 'posts' do
@@ -47,17 +47,23 @@ Here's an example:
         controller 'feeds'
       end
 
+      permission 'my_account' do
+        controller 'users' do
+          only 'show', 'edit', 'update'
+        end
+      end
+
       # To make one of the above permissions public
       public_access 'public'
 
       # To make one of the above permissions protected
-      protected_access 'public'
+      protected_access 'my_account'
     end
 
 
 Monty only has the concept of public and protected right now.  After you have authenticated your user, you'll need to have some code in your controller that looks like:
 
-  session[:access_rights] = Monty.authenticated_access
+    session[:access_rights] = Monty.authenticated_access
 
 Don't forget to reset your session when the user logs out.
 
