@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'rake'
 
-require 'lib/monty.rb'
+require 'lib/monty'
+
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
