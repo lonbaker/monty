@@ -1,4 +1,6 @@
-= monty
+monty
+=============
+
 Rack based authorization system.
 
 [Yard docs](http://yardoc.org/docs/stonean-monty)
@@ -71,7 +73,8 @@ Ummm, I think that's it for now.  Let me know if you have any questions.
 
 This project is the replacement for Lockdown.
 
-== Note on Patches/Pull Requests
+Note on Patches/Pull Requests
+=============
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -81,6 +84,7 @@ This project is the replacement for Lockdown.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+Copyright
+=============
 
 Copyright (c) 2010 Andrew Stone. See LICENSE for details.
