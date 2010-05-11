@@ -5,6 +5,8 @@ Rack based authorization system.
 
 [Yard docs](http://yardoc.org/docs/stonean-monty)
 
+[RSpec Rails Helpers](http://github.com/stonean/monty-rspec-rails)
+
 More to come, but here's the gist for rails 2.3.5:
 
 In your environment.rb add:
